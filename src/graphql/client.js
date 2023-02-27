@@ -1,5 +1,5 @@
 import { ApolloClient, HttpLink, InMemoryCache, split } from "@apollo/client";
-import { GraphqQLWsLink } from "@apollo/client/link/subscriptions";
+import { GraphQLWsLink } from "@apollo/client/link/subscriptions";
 import { getMainDefinition } from "@apollo/client/utilities";
 import { Kind, OperationTypeNode } from "graphql";
 import { createClient as createWsClient } from "graphql-ws";
@@ -8,7 +8,7 @@ const httpLink = new HttpLink({
   uri: "http://localhost:9000/graphql",
 });
 
-const wsLink = new GraphqQLWsLink(
+const wsLink = new GraphQLWsLink(
   createWsClient({
     url: "ws://localhost:9000/graphql",
   })
